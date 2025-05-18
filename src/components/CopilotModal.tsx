@@ -290,18 +290,20 @@ export const CopilotModal = forwardRef<CopilotModalHandle, Props>(
     }
 
     return (
-      <Modal
-        animationType="none"
-        visible
-        onRequestClose={noop}
-        transparent
-        supportedOrientations={["portrait", "landscape"]}
-      >
-        <View style={styles.container} onLayout={handleLayoutChange}>
-          {contentVisible && renderMask()}
-          {contentVisible && renderTooltip()}
-        </View>
-      </Modal>
+      <View>
+        <Modal
+          animationType="none"
+          visible
+          onRequestClose={noop}
+          transparent
+          supportedOrientations={["portrait", "landscape"]}
+        >
+          <View style={styles.container} onLayout={handleLayoutChange}>
+            {contentVisible && renderMask()}
+            {contentVisible && renderTooltip()}
+          </View>
+        </Modal>
+      </View>
     );
 
     function renderMask() {
